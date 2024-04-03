@@ -1,0 +1,126 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\geometry{margin=2.5cm} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+\setlength{\headheight}{13.6pt}
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{setspace}
+
+
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{Konstruktionsprojekt II, Sommersemster 2024}\chead{}\rhead{\thepage}
+\lfoot{Paul Mieskes}\cfoot{}\rfoot{Matrikel-Nr.: 552864}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+\usepackage{subfiles}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+
+
+\onehalfspacing
+\title{Konstruktions Projekt II \\ \Huge \textbf{Mechanische Hebevorrichtung} }
+\author{\textbf{Paul Mieskes} - Matrikel-Nr.: 552864 \\ paul.mieskes@tuhh.de \\ Studiengang: Mechatronik - Tutor: Jorrit Bargmann}
+\date{SoSe 2024} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{pics/tuhh.png}
+\end{figure}
+
+\maketitle
+
+\centering
+\textbf{Variante gemäß Matrikelnummer}\\
+
+\begin{tabular}{| l r l l |}
+	
+	\hline
+	Vorletzte Ziffer & Neigungswinkel der Hebevorrichtung: & $\alpha = 74$  & Grad\\
+	& Zulässige Masse der Ladung: & $m_{zul} = 220 $ & kg \\
+	\hline
+	Letzte Ziffer & (Rotor-)Drehzahl des Elektromotors: & $ n = 1000 $ & min$^{-1}$ \\
+	& Zu überwindende Höhendifferenz: & $ h = 950 $ & mm\\
+	\hline
+\end{tabular}
+\vspace{1.5cm}
+
+
+\begin{tabular}{ | l |  m{10cm}|}
+ \hline 
+ & Datum, Unterschrifft Tutor:in \\
+ \hline 1. Sprechstunde & \\ &\\
+ \hline 2. Sprechstunde & \\& \\
+ \hline 3. Sprechstunde & \\ &\\
+ \hline 4. Sprechstunde & \\ &\\
+ \hline
+ 
+\end{tabular}
+\thispagestyle{empty} % Removes Page number
+% Ende von titel blatt
+
+
+
+\raggedright % ab hier rechts orrientierter text
+
+\newpage
+\pagenumbering{roman}
+\renewcommand*\contentsname{Inhaltsverzeichnis}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1} % Reset Page number count
+
+%\subfile{sections/dummy.tex}
+ 
+\subfile{sections/formelzeichen.tex}
+\subfile{sections/ausgangssituation.tex}
+\subfile{sections/berechnung_alg_groesen.tex}
+
+
+\end{document}
