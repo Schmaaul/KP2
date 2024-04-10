@@ -6,6 +6,10 @@
 *.gz
 *.toc
 .DS_Store
+*.sub
+*.suc
+*.syc
+*.sym
 andere/
 
 # Allow

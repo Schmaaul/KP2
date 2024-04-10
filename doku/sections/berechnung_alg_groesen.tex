@@ -1,13 +1,31 @@
 \documentclass[../main.tex]{subfiles}
+\usepackage{amsmath,amsfonts,amssymb,amsxtra}	% Matheumgebung, Symbolumgebung,
+
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
     \section{Berechnung allgemeiner Größen}
     \subsection{Abmessungen}
     \raggedright
-    \bf{Verfahrweg:} 
-    $ s_{weg} = \frac{h}{cos(\alpha)} $ 
+    \textbf{Verfahrweg} 
+    \begin{equation*}
+        \gls{l_verfahrweg} = \frac{h}{cos(\alpha)} 
+    \end{equation*}
+    \textbf{Motor}
 
-    \bf{Länge:}
+    Der Motor wird als Zylinder mit den folgenden Maßen angenommen:
+    \begin{equation*}
+        \begin{aligned}
+            \gls{h_motor} & = & 300mm \\
+            \gls{d_motor} & = & 220mm \\
+            \gls{m_motor} & = & 15kg
+        \end{aligned}
+    \end{equation*}
+
+    Abgeschätzte Größen
+
+    
+
+    \textbf{Länge:}
         $ s_{l\ddot{a}nge} = h\cdot cos(\alpha) = 950mm \cdot cos(64^\circ) \approx 416mm$
     \newpage
 \end{document}

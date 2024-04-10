@@ -1,13 +1,18 @@
-% !TEX TS-program = pdflatex
-% !TEX encoding = UTF-8 Unicode
-
 % This is a simple template for a LaTeX document using the "article" class.
 % See "book", "report", "letter" for other types of document.
 
 \documentclass[11pt]{article} % use larger type; default would be 10pt
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
-
+\usepackage[ngerman]{babel}
+\usepackage{hyperref}
+ \hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=blue,
+	citecolor = black,      
+	urlcolor=cyan,
+}
 %%% Examples of Article customizations
 % These packages are optional, depending whether you want the features they provide.
 % See the LaTeX Companion or other references for full information.
@@ -31,6 +36,7 @@
 \usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
 \usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
 \usepackage{setspace}
+\usepackage{amsmath,amsfonts,amssymb,amsxtra}	% Matheumgebung, Symbolumgebung,
 
 
 % These packages are all incorporated in the memoir class to one degree or another...
@@ -56,20 +62,43 @@
 
 %%% END Article customizations
 
-%%% The "real" document content comes below...
+%%%
+%%%
+%%%
+%%%
 
+\usepackage{lipsum}
 
-
-\onehalfspacing
+%\onehalfspacing
 \title{Konstruktions Projekt II \\ \Huge \textbf{Mechanische Hebevorrichtung} }
 \author{\textbf{Paul Mieskes} - Matrikel-Nr.: 552864 \\ paul.mieskes@tuhh.de \\ Studiengang: Mechatronik - Tutor: Jorrit Bargmann}
 \date{SoSe 2024} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
 
+\usepackage[toc,section=section]{glossaries}
+
+
+
+\input{./sections/glossDef.tex} % Definiere Glossareinträge, direkt aufrufbar mit cmd + klick
+%\renewcommand{\glossaryname}{Bedeutung}% % funktionier leider nicht
+\makenoidxglossaries
+
+
+\usepackage{float} % gibt H als figure placement option
+
+
+
+\graphicspath{{./images/}}
+%%%
+%%%
+%%%
+%%%
+
 \begin{document}
+	
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{pics/tuhh.png}
+\includegraphics[width=0.5\textwidth]{tuhh.png}
 \end{figure}
 
 \maketitle
@@ -111,16 +140,27 @@
 \pagenumbering{roman}
 \renewcommand*\contentsname{Inhaltsverzeichnis}
 \tableofcontents
+%\listoffigures
+%\listoftables
 
 \newpage
 \pagenumbering{arabic}
 \setcounter{page}{1} % Reset Page number count
 
 %\subfile{sections/dummy.tex}
+
+\renewcommand{\glossaryname}{Bedeutung}% % funktionier leider doch jetzt
+\printnoidxglossary
+\newpage
  
-\subfile{sections/formelzeichen.tex}
-\subfile{sections/ausgangssituation.tex}
+%\subfile{sections/formelzeichen.tex}
+%\subfile{sections/ausgangssituation.tex}
 \subfile{sections/berechnung_alg_groesen.tex}
+
+\newpage
+
+
+
 
 
 \end{document}
